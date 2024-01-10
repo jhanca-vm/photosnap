@@ -1,0 +1,15 @@
+.label {
+  background-image: url('/menu.svg');
+}
+
+.input:focus-visible + .label {
+  outline: 2px solid;
+}
+
+.input:checked + .label {
+  background-image: url('/close.svg');
+}
+
+.input:checked ~ nav {
+  display: block;
+}
