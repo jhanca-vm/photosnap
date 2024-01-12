@@ -1,9 +1,10 @@
 import clsx from 'clsx/lite'
+import GradientBar from './gradient-bar'
 
 export default function Hero() {
   return (
     <section className="sm:flex sm:flex-row-reverse">
-      <picture className="w-full sm:aspect-[1/2] lg:aspect-[83/65]">
+      <picture className="sm:basis-[273px] lg:basis-auto">
         <source
           srcSet="/images/lg/create-and-share.jpg"
           media="(min-width: 1024px)"
@@ -17,7 +18,7 @@ export default function Hero() {
           height="650"
         />
         <img
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover sm:aspect-[1/2] lg:aspect-auto"
           src="/images/create-and-share.jpg"
           alt=""
           width="375"
@@ -26,17 +27,12 @@ export default function Hero() {
       </picture>
       <div
         className={clsx(
-          'relative bg-black py-18 text-white sm:flex sm:basis-auto',
-          'sm:items-center lg:w-152 lg:flex-shrink-0'
+          'relative bg-black py-18 text-white sm:flex sm:flex-grow',
+          'sm:basis-min sm:items-center lg:flex-shrink-0 lg:basis-152'
         )}
       >
-        <div className="px-8 sm:relative md:px-14 lg:px-28">
-          <span
-            className={clsx(
-              'absolute top-0 h-1.5 w-32 bg-gradient sm:left-0 sm:h-full',
-              'sm:w-1.5'
-            )}
-          />
+        <div className="px-8 sm:relative sm:px-12 md:px-14 lg:px-28">
+          <GradientBar />
           <h1
             className={clsx(
               'mb-4 text-3xl font-bold uppercase tracking-wider sm:mb-5',

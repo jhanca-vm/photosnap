@@ -7,6 +7,9 @@ const config: Config = {
       backgroundImage: {
         gradient: 'linear-gradient(27deg, #ffc593, #bc7198 43%, #5A77ff 83%)'
       },
+      flexBasis: {
+        min: 'min-content'
+      },
       fontFamily: {
         sans: ['var(--font-dm-sans)']
       },
