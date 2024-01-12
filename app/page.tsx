@@ -7,7 +7,7 @@ import Features from './_components/features'
 
 export const metadata: Metadata = { title: 'Photosnap' }
 
-export default async function Home() {
+export default async function Page() {
   const [stories, features] = await Promise.all([
     prisma.story.findMany({ orderBy: { date: 'desc' }, take: 4 }),
     prisma.feature.findMany({ take: 3 })
