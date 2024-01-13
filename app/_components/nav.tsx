@@ -1,27 +1,11 @@
 'use client'
 
-import { type MouseEvent, useState, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
 import clsx from 'clsx/lite'
 import Link from 'next/link'
+import useNav from '@/_lib/hooks/use-nav'
 
 export default function Nav() {
-  const [isOpen, setIsOpen] = useState(false)
-  const pathname = usePathname()
-  const links = ['Stories', 'Features', 'Pricing']
-
-  function close(event: MouseEvent) {
-    const { nodeName } = event.target as HTMLElement
-
-    if (nodeName === 'NAV') setIsOpen(false)
-  }
-
-  useEffect(() => setIsOpen(false), [pathname])
-
-  useEffect(() => {
-    const header = document.querySelector('header')!
-    isOpen ? header.classList.add('sticky') : header.classList.remove('sticky')
-  }, [isOpen])
+  const { links, isOpen, setIsOpen, close } = useNav()
 
   return (
     <>

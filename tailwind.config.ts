@@ -7,6 +7,9 @@ const config: Config = {
       backgroundImage: {
         gradient: 'linear-gradient(27deg, #ffc593, #bc7198 43%, #5A77ff 83%)'
       },
+      colors: {
+        gray: '#dfdfdf'
+      },
       flexBasis: {
         min: 'min-content'
       },
@@ -23,6 +26,9 @@ const config: Config = {
       },
       maxWidth: {
         '6xl': '69.375rem'
+      },
+      screens: {
+        '@sm': { min: '640px', max: '1023px' }
       },
       spacing: {
         18: '4.5rem',
