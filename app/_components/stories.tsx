@@ -22,14 +22,14 @@ export default function Stories({ data, date: hasDate }: Properties) {
           <article className="relative" key={`story-${id}`}>
             <picture>
               <source
-                srcSet={`/images/sm/story/${id}.jpg`}
+                srcSet={`/images/sm/story/${id}.webp`}
                 media="(min-width: 640px)"
                 width="360"
                 height="500"
               />
               <img
                 className="w-full bg-black"
-                src={`/images/story/${id}.jpg`}
+                src={`/images/story/${id}.webp`}
                 alt=""
                 width="375"
                 height="375"

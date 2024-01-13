@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 import clsx from 'clsx/lite'
+import Picture from './picture'
+import Title from './title'
 
 interface Properties {
   image: string
@@ -10,27 +12,12 @@ interface Properties {
 export default function Section({ image, title, children }: Properties) {
   return (
     <section className="sm:flex sm:odd:flex-row-reverse">
-      <picture className="sm:basis-[273px] lg:basis-auto">
-        <source
-          srcSet={`/images/lg/${image}`}
-          media="(min-width: 1024px)"
-          width="830"
-          height="600"
-        />
-        <source
-          srcSet={`/images/sm/${image}`}
-          media="(min-width: 640px)"
-          width="273"
-          height="600"
-        />
-        <img
-          className="h-full w-full object-cover sm:aspect-[1/2] lg:aspect-auto"
-          src={`/images/${image}`}
-          alt=""
-          width="375"
-          height="271"
-        />
-      </picture>
+      <Picture
+        className="sm:aspect-[1/2] lg:aspect-[83/60]"
+        image={{ src: `/images/${image}`, width: 375, height: 271 }}
+        imageSm={{ src: `/images/sm/${image}`, width: 273, height: 600 }}
+        imageLg={{ src: `/images/lg/${image}`, width: 830, height: 600 }}
+      />
       <div
         className={clsx(
           'px-8 py-18 sm:flex sm:flex-grow sm:basis-min sm:flex-col',
@@ -38,14 +25,7 @@ export default function Section({ image, title, children }: Properties) {
           'lg:px-28'
         )}
       >
-        <h2
-          className={clsx(
-            'mb-4 text-3xl font-bold uppercase tracking-wider sm:mb-5',
-            'sm:text-5xl'
-          )}
-        >
-          {title}
-        </h2>
+        <Title as="h2">{title}</Title>
         {children}
       </div>
     </section>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import prisma from './_lib/prisma'
-import Hero from './_components/hero'
+import Picture from './_components/picture'
+import HeroContent from './_components/hero-content'
 import Section from './_components/section'
 import Stories from './_components/stories'
 import Features from './_components/features'
@@ -15,9 +16,35 @@ export default async function Page() {
 
   return (
     <>
-      <Hero />
+      <section className="sm:flex sm:flex-row-reverse">
+        <Picture
+          className="sm:aspect-[1/2] lg:aspect-[83/65]"
+          image={{
+            src: '/images/create-and-share.webp',
+            width: 375,
+            height: 294
+          }}
+          imageSm={{
+            src: '/images/sm/create-and-share.webp',
+            width: 273,
+            height: 650
+          }}
+          imageLg={{
+            src: '/images/lg/create-and-share.webp',
+            width: 830,
+            height: 650
+          }}
+        />
+        <HeroContent title="Create and share your photo stories.">
+          <p>
+            Photosnap is a platform for photographers and visual storytellers.
+            We make it easy to share photos, tell stories and connect with
+            others.
+          </p>
+        </HeroContent>
+      </section>
       <Section
-        image="beautiful-stories.jpg"
+        image="beautiful-stories.webp"
         title="Beautiful stories every time"
       >
         <p>
@@ -26,7 +53,7 @@ export default async function Page() {
           Then share your story with everyone.
         </p>
       </Section>
-      <Section image="designed-for-everyone.jpg" title="Designed for everyone">
+      <Section image="designed-for-everyone.webp" title="Designed for everyone">
         <p>
           Photosnap can help you create stories that resonate with your
           audience. Our tool is designed for photographers of all levels,

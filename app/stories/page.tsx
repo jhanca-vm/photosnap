@@ -13,20 +13,20 @@ export default async function Page() {
       <section className="relative">
         <picture>
           <source
-            srcSet="/images/lg/moon-of-appalacia.jpg"
+            srcSet="/images/lg/moon-of-appalacia.webp"
             media="(min-width: 1024px)"
             width="1440"
             height="650"
           />
           <source
-            srcSet="/images/sm/moon-of-appalacia.jpg"
+            srcSet="/images/sm/moon-of-appalacia.webp"
             media="(min-width: 640px)"
             width="768"
             height="650"
           />
           <img
             className="w-full"
-            src="/images/moon-of-appalacia.jpg"
+            src="/images/moon-of-appalacia.webp"
             alt=""
             width="375"
             height="317"
